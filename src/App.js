@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import uuidv1 from "uuid/v1";
-import glamorous, { Div, H1 } from "glamorous";
+import { Div, H1 } from "glamorous";
 
 import sendReq from "./sendReq";
+
+import Textarea from "./Textarea";
+import Button from "./Button";
 import CenterContainer from "./CenterContainer";
 import Result from "./Result";
-
-const Textarea = glamorous.textarea("c-txt__input", {
-  flex: "1",
-  marginRight: 5,
-  resize: "none"
-});
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +20,13 @@ class App extends Component {
       err: null
     };
 
+    this.onClick = this.onClick.bind(this);
     this.onChange = this.onChange.bind(this);
+  }
+
+  onClick() {
+    this.setState({ svgStr: "" });
+    this.textarea.focus();
   }
 
   onChange(e) {
@@ -68,11 +71,18 @@ class App extends Component {
           </H1>
         </Div>
         <Div flex="1" display="flex">
-          <Textarea
-            placeholder="Paste svg code here"
-            value={svgStr}
-            onChange={this.onChange}
-          />
+          <Div flex="1" marginRight="5px" position="relative">
+            <Button onClick={this.onClick}>clear</Button>
+            <Textarea
+              innerRef={c => {
+                this.textarea = c;
+              }}
+              resize="none"
+              placeholder="Paste svg code here"
+              value={svgStr}
+              onChange={this.onChange}
+            />
+          </Div>
           <Div flex="1" marginLeft="5px" position="relative">
             {loading && <CenterContainer>fetching result...</CenterContainer>}
             {!loading &&
@@ -82,7 +92,7 @@ class App extends Component {
                   {err.message}
                 </Div>
               </CenterContainer>}
-            {!loading && urlStr && <Result url={urlStr} />}
+            {!loading && svgStr && urlStr && <Result url={urlStr} />}
           </Div>
         </Div>
       </Div>

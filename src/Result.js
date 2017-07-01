@@ -1,39 +1,67 @@
-import React from "react";
-import glamorous, { Div, Img } from "glamorous";
+import React, { Component } from "react";
+import { Div, Img } from "glamorous";
 
-const Textarea = glamorous.textarea("c-txt__input", {
-  resize: "none",
-  position: "absolute",
-  width: "100%",
-  height: "100%"
-});
+import Textarea from "./Textarea";
+import Button from "./Button";
 
-function Result({ url }) {
-  return (
-    <Div
-      position="absolute"
-      width="100%"
-      height="100%"
-      display="flex"
-      flexDirection="column"
-    >
-      <Div flex="1" marginBottom="5px" position="relative">
-        <Textarea value={url} readOnly />
-      </Div>
+class Result extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      copied: false
+    };
+
+    this.onFocusTextarea = this.onFocusTextarea.bind(this);
+    this.onClickCopy = this.onClickCopy.bind(this);
+  }
+
+  onFocusTextarea() {
+    this.textarea.select();
+  }
+
+  onClickCopy() {
+    this.textarea.select();
+    document.execCommand("copy");
+  }
+
+  render() {
+    const { url } = this.props;
+
+    return (
       <Div
-        flex="1"
-        marginTop="5px"
+        position="absolute"
+        width="100%"
+        height="100%"
         display="flex"
-        alignItems="center"
-        justifyContent="center"
-        position="relative"
+        flexDirection="column"
       >
-        <Div position="absolute" width="100%" height="100%" left="0" top="0">
-          <Img width="100%" height="100%" alt="preview" src={url} />
+        <Div flex="1" marginBottom="5px" position="relative">
+          <Textarea
+            innerRef={c => {
+              this.textarea = c;
+            }}
+            readOnly
+            value={url}
+            onFocus={this.onFocusTextarea}
+          />
+          <Button onClick={this.onClickCopy}>copy</Button>
+        </Div>
+        <Div
+          flex="1"
+          marginTop="5px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+        >
+          <Div position="absolute" width="100%" height="100%" left="0" top="0">
+            <Img width="100%" height="100%" alt="preview" src={url} />
+          </Div>
         </Div>
       </Div>
-    </Div>
-  );
+    );
+  }
 }
 
 export default Result;
