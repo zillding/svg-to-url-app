@@ -3,6 +3,8 @@ import glamorous, { Div, Img } from "glamorous";
 
 const Textarea = glamorous.textarea("c-txt__input", {
   resize: "none",
+  position: "absolute",
+  width: "100%",
   height: "100%"
 });
 
@@ -15,7 +17,7 @@ function Result({ url }) {
       display="flex"
       flexDirection="column"
     >
-      <Div flex="1" marginBottom="5px">
+      <Div flex="1" marginBottom="5px" position="relative">
         <Textarea value={url} readOnly />
       </Div>
       <Div
@@ -24,8 +26,11 @@ function Result({ url }) {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        position="relative"
       >
-        <Img maxWidth="100%" maxHeight="100%" alt="preview" src={url} />
+        <Div position="absolute" width="100%" height="100%" left="0" top="0">
+          <Img width="100%" height="100%" alt="preview" src={url} />
+        </Div>
       </Div>
     </Div>
   );
