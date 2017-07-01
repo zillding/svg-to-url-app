@@ -1,0 +1,35 @@
+{
+  "name": "svg-to-url-app",
+  "version": "0.1.0",
+  "homepage": "https://zillding.github.io/svg-to-url-app",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "glamor": "^2.20.25",
+    "glamorous": "^3.23.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10",
+    "uuid": "^3.1.0"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0",
+    "husky": "^0.14.2",
+    "lint-staged": "^4.0.0",
+    "prettier": "^1.5.2"
+  }
+}
