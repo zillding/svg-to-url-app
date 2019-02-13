@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serviceEndPoint = "https://svg-to-url-service-dlmiqqbzyf.now.sh";
+const serviceEndPoint = "https://svg-to-url-service-5wf05qs7d.now.sh";
 
 function sendReq(data) {
   return axios
