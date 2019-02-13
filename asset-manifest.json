@@ -1,4 +1,11 @@
 {
-  "main.js": "static/js/main.7120f9f1.js",
-  "main.js.map": "static/js/main.7120f9f1.js.map"
+  "main.js": "/svg-to-url-app/static/js/main.e7c06aff.chunk.js",
+  "main.js.map": "/svg-to-url-app/static/js/main.e7c06aff.chunk.js.map",
+  "runtime~main.js": "/svg-to-url-app/static/js/runtime~main.23d7a4b5.js",
+  "runtime~main.js.map": "/svg-to-url-app/static/js/runtime~main.23d7a4b5.js.map",
+  "static/js/2.608e69ce.chunk.js": "/svg-to-url-app/static/js/2.608e69ce.chunk.js",
+  "static/js/2.608e69ce.chunk.js.map": "/svg-to-url-app/static/js/2.608e69ce.chunk.js.map",
+  "index.html": "/svg-to-url-app/index.html",
+  "precache-manifest.352b5de27b21e530636309a2698f4522.js": "/svg-to-url-app/precache-manifest.352b5de27b21e530636309a2698f4522.js",
+  "service-worker.js": "/svg-to-url-app/service-worker.js"
 }
