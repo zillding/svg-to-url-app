@@ -59,6 +59,16 @@ class Result extends Component {
             <Img width="100%" height="100%" alt="preview" src={url} />
           </Div>
         </Div>
+        <Div
+          backgroundColor="#eee"
+          padding="10px"
+          marginTop="5px"
+          whiteSpace="nowrap"
+          overflow="hidden"
+          textOverflow="ellipsis"
+        >
+          <code>{`<img src="${url}" />`}</code>
+        </Div>
       </Div>
     );
   }
