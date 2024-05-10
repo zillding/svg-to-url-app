@@ -5,7 +5,7 @@
   "repository": "zillding/svg-to-url-app",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.28.0",
     "glamor": "^2.20.40",
     "glamorous": "^5.0.0",
     "react": "^16.8.6",
