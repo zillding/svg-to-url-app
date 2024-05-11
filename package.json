@@ -1,50 +1,26 @@
 {
   "name": "svg-to-url-app",
   "version": "0.1.0",
-  "homepage": "https://zillding.github.io/svg-to-url-app",
-  "repository": "zillding/svg-to-url-app",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "glamor": "^2.20.40",
-    "glamorous": "^5.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "uuid": "^3.3.2"
-  },
+  "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.3"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1",
-    "husky": "^2.4.1",
-    "lint-staged": "^8.2.1",
-    "prettier": "^1.16.4"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
 }
