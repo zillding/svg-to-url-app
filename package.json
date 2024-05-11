@@ -1,7 +1,7 @@
 {
   "name": "svg-to-url-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "repository": "zillding/svg-to-url-app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
